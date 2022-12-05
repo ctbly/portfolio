@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f3f1;
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.background {
+  object-fit: cover;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  position: fixed;
+  top: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+}
+
+.noise {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent
+    url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation 0.2s infinite;
+  opacity: 0.9;
+  visibility: visible;
+  z-index: -1;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.left {
+  width: 60%;
+  height: 100%;
+}
+
+.logo {
+  width: 5%;
+  padding: 5%;
+}
+
+.title {
+  font-size: 90px;
+  font-family: Poppins;
+  color: #1f2122;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-top: 10%;
+  gap: 40px;
+}
+
+.title:hover {
+  animation: blink 0.01s infinite;
+}
+
+.text {
+  font-family: "Poppins";
+  font-weight: 400;
+  color: #1f2122;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+.button {
+  width: auto;
+  display: flex;
+  margin-right: 3%;
+  margin-top: 8%;
+  font-family: "Poppins";
+  font-weight: 400;
+  padding-bottom: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 15px;
+  background: none;
+  color: #1f2122;
+  border: solid #1f2122 1px;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.button:hover {
+  background: #e77e7e;
+  color: white;
+  cursor: pointer;
+  border: solid #e77e7e 1px;
+}
+
+.contact {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 15px;
+  color: #e77e7e;
+  /*padding-top: 200px;*/
+  padding-left: 5%;
+  margin-top: 120px;
+}
+
+.right {
+  width: 40%;
+  height: 100%;
+  display: flex;
+}
+
+.card {
+  width: 500px;
+  height: 500px;
+  backdrop-filter: blur(4px);
+  border-radius: 9px;
+  margin: 20%;
+  align-items: center;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #f4f3f1;
+  background: #1f2122;
+}
+
+.biographie {
+  font-family: poppins;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.img {
+  width: 50%;
+}
+
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    color: black;
+  }
+  100% {
+    background-image: linear-gradient(
+      to right top,
+      #e77e7e,
+      #fb75a8,
+      #927991,
+      #dda4b4,
+      #db12eb
+    );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
+}
